@@ -1,11 +1,11 @@
-package TemplateMethod;
+package TemplateMethod.after;
 
 /**
  * Lib1 由框架开发人员编写，属于稳定类
  * 实现了step1(),step3(),step5()
  */
 
-public class Lib2 {
+public class Lib {
 
     public void step1(){ // 稳定
         System.out.println(this.getClass().toString() + " step1");
