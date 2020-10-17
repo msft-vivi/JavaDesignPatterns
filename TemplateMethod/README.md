@@ -108,8 +108,8 @@
 
 ### 3.8 Tempate Method Example
 * **没有使用模板方法**
-  > 这里为了方便没有自己画图，这里的程序主流程被放到 Main1.java 里面
-  > 这里所说的主流程不是指 main 在什么地方，而是指的是应用程序的核心程序（示例中的 run()方法 ）被直接写在哪里，当然也可能直接写在 main 里面，也就下图这种方法，具体参考代码 Application1.java 、Lib1.java。
+  > 这里为了方便没有自己画图，这里的程序主流程被放到 before/Main.java 里面
+  > 这里所说的主流程不是指 main 在什么地方，而是指的是应用程序的核心程序（示例中的 run()方法 ）被直接写在哪里，当然也可能直接写在 main 里面，也就下图这种方法，具体参考代码 before/Application.java 、before/Lib.java。
 
 <img src="img/template_method1.png" alt="GitHub" title="GitHub,Social Coding" width="500" height="300" />
 
@@ -117,7 +117,7 @@
 <br>
 
 * **使用模板方法**
-  > 把程序核心方法 run()嵌入在框架类 (Lib2) 中，其中包括了子类需要实现的方法。客户端应用程序只需要重写这些需要改变的方法就行。具体参考 Application2、Lib2。这种实现使得**子类可以直接复用父类的代码，并且在需要改变的时候支持修改**。
+  > 把程序核心方法 run()嵌入在框架类 (after/Lib) 中，其中包括了子类需要实现的方法。客户端应用程序只需要重写这些需要改变的方法就行。具体参考 after/Application、after/Lib。这种实现使得**子类可以直接复用父类的代码，并且在需要改变的时候支持修改**。
 
 <img src="img/template_method2.png" alt="GitHub" title="GitHub,Social Coding" width="500" height="300" />
 
@@ -137,7 +137,7 @@
 * Template Method模式是一种非常基础性的设计模式，在面向对象系统中有着大量的应用。它用最简洁的机制（C++虚函数的多态性以及Java多态）**为很多应用程序框架提供了灵活的扩展点，是代码复用方面的基本实现结构**。
 
     <br>
-* 除了可以灵活应对子步骤的变化外，“**不要调用我，让我来调用你**”（例子中的Lib2调用Application2）的反向控制结构是Template Method的典型应用。
+* 除了可以灵活应对子步骤的变化外，“**不要调用我，让我来调用你**”（例子中的after/Lib调用after/Application）的反向控制结构是Template Method的典型应用。
     <br>
 * 在具体实现方面，被**Template Method调用的可变方法可以具有实现，也可以没有任何实现**（C++抽象方法、C++纯虚方法，Java中不可以声明为抽象方法，因为抽象方法必须把类声明为抽象类），但一般推荐将它们设置为protected（自己与子类可见）方法。
 
