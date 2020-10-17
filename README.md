@@ -42,9 +42,9 @@
 ### 组件协作：
 + [Template Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/TemplateMethod)
 + [Template-Pattern(Head-First版)](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Template-Pattern)
-+ [Observer/Event](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Observer)
++ [Observer/Event](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Observer)
 + [Observer(Head-First版)](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Observer-Pattern)
-+ [Strategy](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Strategy)
++ [Strategy](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Strategy)
 + [Strategy(Head-First版)](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Strategy-Pattern)
 ### 单一职责：
 + [Decorator](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Decorator)
