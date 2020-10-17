@@ -1,6 +1,6 @@
 [TOC]
 
-## 第四章 Strategy
+## Chapter 4 Strategy
 
 ### 4.1 Motivation
 * 在软件构建过程中，某些对象使用的算法可能多种多样，经常改变，如果将这些算法都编码到对象中，将会使对象变得异常复杂；而且有时候支持不使用的算法也是一个性能负担。
@@ -22,3 +22,75 @@
 * Strategy模式提供了用条件判断语句以外的另一种选择，消除条件判断语句，就是在解耦合。含有许多条件判断语句的代码通常都需要Strategy模式
 * 如果Strategy对象没有实例变量，那么各个上下文可以共享同一个Strategy对象，从而节省对象开销。
   > 这种情况可以演化为单例模式
+
+### 4.5 Example  
+* before : 原始设计
+    > 静态的看这个程序，似乎也什么问题，但是程序员应该有时间轴的概念如果客户需要增加其他国家的税收计算，则需要修改这部分源码，这**违背了 “开闭原则”** ==> 对扩展开放，对修改关闭
+
+```java
+    public class SalesOrder {
+        TaxBase tax;
+        public double CalculateTax(){
+            double sumTax = 0;
+            // ...
+            if(tax == TaxBase.CN_Tax){
+                // ...
+            }
+            else if(tax == TaxBase.US_Tax){
+                // ...
+            }
+            else if(tax == TaxBase.DE_Tax){
+                // ...
+            }
+            // ...
+            return sumTax;
+        }
+    }
+```
+
+* after ：使用 strategy 模式
+    > 可以采用类扩展的方式满足“添加新的国家税费计算”的需求
+
+```java
+
+    // 1、定义用于计算Tax的策略接口
+    public interface TaxStrategy {
+        double caculate(Parameters parameters);
+    }
+
+    // 2、Concrete Strategy （具体策略类）
+    // 支持以扩展的方式增加国家
+    public class CNTax implements TaxStrategy{
+       @Override
+        public double caculate(Parameters parameters) {
+            return 0;
+        }
+    }
+
+    // 3、Strategy Context 
+    public class SalesOrder {
+        TaxStrategy taxStrategy; // 持有策略接口引用，声明为接口类型，而不是具体类
+
+    //    public SalesOrder(TaxStrategy taxStrategy) {
+    //        this.taxStrategy = taxStrategy;
+    //    }
+
+        // 更好的方法是使用工厂模式创建策略对象
+        public SalesOrder(TaxStrategyFactory taxStrategyFactory) {
+            this.taxStrategy = taxStrategyFactory.newStrategy();
+        }
+
+        // executeStrategy
+        public double calculateTax(){
+            // ...
+
+            // parameters 不同国家计算税需要的信息,需要根据不同国家而改变，为了程序完整性简单 new了个对象
+            double val = taxStrategy.caculate(new Parameters());
+
+            // ...
+
+            return val;
+        }
+    }
+
+```

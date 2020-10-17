@@ -49,7 +49,7 @@
 * **定义 Observer 和 Subject 接口**
 ![](img/2020-10-17-19-00-46.png)
 
-### 5.5 Example 
+### 5.5 Another Example Improvements 
 * 可以对Observer update 方法参数再次封装，方便扩展更多的参数，而不仅仅包括 temperature、humidity、pressure这三个参数
     <br>
 
