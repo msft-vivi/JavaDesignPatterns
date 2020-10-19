@@ -33,7 +33,7 @@
 
 #### 7.5.1 案例描述
 > 公司要开发一个通信系统，具体情况如下：
-> 主类Messager:包括与平台无关的login(),sendMessage(),sendPicture()方法，以及需要根据平（PC,Mobile）台变化的 playSound(),drawShape(),writeText()，connect() 等方法
+> 主类Messager:包括与平台无关的login(),sendMessage(),sendPicture()方法，以及需要根据平台（PC,Mobile）变化的 playSound(),drawShape(),writeText()，connect() 等方法
 > Messager 需要根据业务类型区分为 Lite 版本 和 Perfect 版本
 
 
