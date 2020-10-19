@@ -48,16 +48,16 @@
 
 ```
 #### 7.5.2 before
-  * 定义的类如下:
+* 定义的类如下:
    ![](img/class_before.png)
 
-  * 这种方法试图把 PC 和 Mobile 拆分为两个平台来实现，这样似乎也可以。但是有个问题是类太多，代码冗余度高，**破坏“单一职责”原则**如果继续扩大业务，或者跨平台数，那么会有“类爆炸”风险。
+* 这种方法试图把 PC 和 Mobile 拆分为两个平台来实现，这样似乎也可以。但是有个问题是类太多，代码冗余度高，**破坏“单一职责”原则**如果继续扩大业务，或者跨平台数，那么会有“类爆炸”风险。
       <br>
 
-  * **仔细观察代码会发现，MobileMessagerLite 和 PCMessagerLite 代码相似的非常高，MobileMessagerPerfect 和PCMessagerLite相似的非常高,他们都是因为实现平台不同导致的。此时我们应该能够想到把通过化继承为组合的方式，重新定义一个平台的基类（接口），把这个基类（接口）作为Lite 和 Perfect 业务类的成员，使用多态机制，在运行时，动态绑定运行平台（PC,Mobile），这样无论后面扩展多少个平台版本，都可以只写一个Lite 和 Perfect。**
+* **仔细观察代码会发现，MobileMessagerLite 和 PCMessagerLite 代码相似的非常高，MobileMessagerPerfect 和PCMessagerLite相似的非常高,他们都是因为实现平台不同导致的。此时我们应该能够想到把通过化继承为组合的方式，重新定义一个平台的基类（接口），把这个基类（接口）作为Lite 和 Perfect 业务类的成员，使用多态机制，在运行时，动态绑定运行平台（PC,Mobile），这样无论后面扩展多少个平台版本，都可以只写一个Lite 和 Perfect。**
 
 #### 7.5.3 after
-  * 寻找变化点，把变化的和稳定的隔离开
+* 寻找变化点，把变化的和稳定的隔离开
     ```java
         // 每个业务都需要的部分，稳定的（不同业务可以在此类上扩展）
         public abstract class Messager {
@@ -81,9 +81,10 @@
             protected abstract void writeText();
             protected abstract void connect();
         }
-    ```
- * 定义的类图
-    ![](img/after_class.png)
+    ```  
+
+* 定义的类图
+  ![](img/after_class.png)
 
 * 类UML图
 
