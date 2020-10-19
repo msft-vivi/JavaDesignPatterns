@@ -40,53 +40,53 @@
 
 ## 从封装变化角度对模式分类
 ### 组件协作：
-+ [Template Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/TemplateMethod)
-+ [Observer/Event](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Observer)  
-+ [Strategy](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Strategy)
++ [Template Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter3_TemplateMethod)  
++ [Strategy](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter4_Strategy)
++ [Observer/Event](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter5_Observer)  
 
 
 ### 单一职责：
-+ [Decorator](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Decorator)
-+ [Bridge](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Bridge)
++ [Decorator](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter6_Decorator)
++ [Bridge](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter7_Bridge)
 
 ### 对象创建:
-+ [Factory Method](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Factory%20Method)
++ [Factory Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Factory%20Method)
 + [Bridge](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Bridge)
-+ [Abstract Factory](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Abstract%20Factory)
-+ [Prototype](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Prototype)
-+ [Builder](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Builder)
++ [Abstract Factory](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Abstract%20Factory)
++ [Prototype](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Prototype)
++ [Builder](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Builder)
 
 
 ### 对象性能：
-+ [Singleton](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Singleton)
-+ [Flyweight(享元模式)](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Flyweight)  
++ [Singleton](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Singleton)
++ [Flyweight(享元模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Flyweight)  
 
 ### 接口隔离:
-+ [Façade(门面模式)](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Facade)
-+ [Proxy](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Proxy)
-+ [Mediator(中介者)](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Mediator)
-+ [Adapter](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Adapter)
++ [Façade(门面模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Facade)
++ [Proxy](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Proxy)
++ [Mediator(中介者)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Mediator)
++ [Adapter](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Adapter)
 
  
 ### 状态变化：
-+ [Memento(备忘录)](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Memento)
-+ [State](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/State)
++ [Memento(备忘录)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Memento)
++ [State]([State](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/))
 
 
 ### 数据结构：
-+ [Composite(组合模式)](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Composite)
-+ [Iterator](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Iterator)
-+ [Chain of Resposibility(职责链)](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Chain%20of%20Resposibility)
++ [Composite(组合模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Composite)
++ [Iterator](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Iterator)
++ [Chain of Resposibility(职责链)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chain%20of%20Resposibility)
 
 
 ### 行为变化：
-+ [Command](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Command)
-+ [Command(Head-First版)](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Command-Pattern)
-+ [Visitor](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Visitor)
++ [Command](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Command)
++ [Command(Head-First版)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Command-Pattern)
++ [Visitor](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Visitor)
 
 
 ### 领域问题：
-+ [Interpreter](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Interpreter)
++ [Interpreter](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Interpreter)
 
 
 ## 总结
