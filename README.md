@@ -50,8 +50,7 @@
 + [Bridge](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter7_Bridge)
 
 ### 对象创建:
-+ [Factory Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Factory%20Method)
-+ [Bridge](https://github.com/liu-jianhao/Cpp-Design-Patterns/tree/master/Bridge)
++ [Factory Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter8_Factory%20Method)
 + [Abstract Factory](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Abstract%20Factory)
 + [Prototype](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Prototype)
 + [Builder](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Builder)
