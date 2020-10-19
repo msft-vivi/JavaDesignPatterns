@@ -51,7 +51,7 @@
 
 ### 对象创建:
 + [Factory Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter8_Factory%20Method)
-+ [Abstract Factory](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Abstract%20Factory)
++ [Abstract Factory](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter9_Abstract%20Factory)
 + [Prototype](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Prototype)
 + [Builder](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Builder)
 
