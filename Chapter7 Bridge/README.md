@@ -65,6 +65,7 @@
 
 #### 7.5.3 after
 * 寻找变化点，把变化的和稳定的隔离开
+  > **这里不能用Java interface代替抽象类**，因为Java interface 只能包含 public static final 类型变量，而这里需要持有实现层（Imp）的引用，所有不可以使用接口。
     ```java
         // 每个业务都需要的部分，稳定的（不同业务可以在此类上扩展）
         public abstract class Messager {
