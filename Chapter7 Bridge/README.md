@@ -27,11 +27,16 @@
 <br>
 
 * Bridge模式的应用一般在“两个非常强的变化维度”，有时一个 类也有多于两个的变化维度，这时可以使用Bridge的扩展模式。
+
+
 ### 7.5 Example
+
 #### 7.5.1 案例描述
 > 公司要开发一个通信系统，具体情况如下：
 > 主类Messager:包括与平台无关的login(),sendMessage(),sendPicture()方法，以及需要根据平（PC,Mobile）台变化的 playSound(),drawShape(),writeText()，connect() 等方法
 > Messager 需要根据业务类型区分为 Lite 版本 和 Perfect 版本
+
+
 ```java
     public class Messager {
         //平台无关(稳定)
@@ -48,7 +53,9 @@
 
 ```
 #### 7.5.2 before
-* 定义的类如下:
+* 定义的类如下:  
+
+
 ![](img/class_before.png)
 
 * 这种方法试图把 PC 和 Mobile 拆分为两个平台来实现，这样似乎也可以。但是有个问题是类太多，代码冗余度高，**破坏“单一职责”原则**如果继续扩大业务，或者跨平台数，那么会有“类爆炸”风险。
