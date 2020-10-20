@@ -153,7 +153,7 @@
     }
 ```
 
-* 主管控制生产器  
+* 主管控制生成器  
 
 ```java
     public class Director {
