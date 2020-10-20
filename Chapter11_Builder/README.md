@@ -7,7 +7,7 @@
 > 典型模式    
 > • Factory Method  
 > • Abstract Factory  
-> • Prototype
+> • Prototype  
 > • **Builder**  
 
 ### 11.1 Motivation
