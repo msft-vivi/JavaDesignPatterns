@@ -39,14 +39,17 @@
 ### 5.5 Example 
 > 例子来自《Head First Design Patterns》的 Observer模式
 
-* **改进前**
-  > WeathdeData 依赖具体的xxxDisplay 实现，**破坏了依赖倒置原则** ，如果后续扩展 display pane，则需要修改 WeatherData 代码，这又**破坏了 “开闭原则”**
+#### 5.5.1 before
+> WeathdeData 依赖具体的xxxDisplay 实现，**破坏了依赖倒置原则** ，如果后续扩展 display pane，则需要修改 WeatherData 代码，这又**破坏了 “开闭原则”**
 
 ![](img/2020-10-17-19-03-40.png)
     <br>
     <br>
 
-* **改进后的类UML图示**
+#### 5.5.2 after
+* 类 UML 图  
+
+
 ![](img/2020-10-17-18-59-36.png)
     <br>
     <br>
