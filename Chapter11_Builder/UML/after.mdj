@@ -709,10 +709,10 @@
 											"font": "Arial;13;1",
 											"left": 893,
 											"top": 497,
-											"width": 92.47265625,
+											"width": 118.96142578125,
 											"height": 13,
 											"underline": true,
-											"text": "House"
+											"text": "House （Product）"
 										},
 										{
 											"_type": "LabelView",
@@ -745,7 +745,7 @@
 									"font": "Arial;13;0",
 									"left": 888,
 									"top": 490,
-									"width": 102.47265625,
+									"width": 128.96142578125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF1Rg1O+F6aUAM="
@@ -765,7 +765,7 @@
 							"containerChangeable": true,
 							"left": 888,
 							"top": 480,
-							"width": 112.47265625,
+							"width": 138.96142578125,
 							"height": 45,
 							"nameCompartment": {
 								"$ref": "AAAAAAF1Rg1O+F6Z0nA="
@@ -785,7 +785,7 @@
 								"$ref": "AAAAAAF1Rgsx6V3jf+U="
 							},
 							"lineStyle": 1,
-							"points": "754:475;887:494"
+							"points": "754:474;887:492"
 						},
 						{
 							"_type": "UMLTextView",
@@ -1973,7 +1973,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "House"
+					"name": "House （Product）"
 				},
 				{
 					"_type": "UMLClass",
