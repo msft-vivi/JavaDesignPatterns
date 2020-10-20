@@ -34,7 +34,8 @@
 #### 6.6.2 before
 * 最开始的设计：无论是主体类（FileInputStream、NetworkStream、MemoryStream）还是其扩展类（CrytoFileStream...）都是采用继承的方式实现，代码冗余非常严重，并且这种设计思路会导致“类爆炸”。
    
-    <br> 
+    <br>  
+     
 * 类图
     ![](img/2020-10-18-10-45-17.png)  
     <br>   
