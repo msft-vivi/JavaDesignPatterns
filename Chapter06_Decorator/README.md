@@ -77,10 +77,11 @@
         同理Bufferd方法和CryptoBufferd方法都需要分别实现三个类，更夸张的是，如果主体类增多，这些扩展方法的会按照
         阶乘速度增加。
     ```  
-* 类 UML 图  
+* 类 UML 图    
 
 
-![](img/middle.png)  
+    ![](img/before_uml.png)
+
 
 #### 6.6.3 middle   
 
