@@ -26,16 +26,26 @@
 * **Decorator模式的目的并非解决“多子类衍生的多继承”问题， Decorator模式应用的要点在于解决“主体类在多个方向上的扩展功能”——是为“装饰”的含义**（主体操作和扩展操作（Decorator）要分开继承）
 
 
-### 6.5 Example
-* **before**
-    > 最开始的设计：无论是主体类（FileInputStream、NetworkStream、MemoryStream）还是其扩展类（CrytoFileStream...）都是采用继承的方式实现，代码冗余非常严重，并且这种设计思路会导致“类爆炸”。
+### 6.5 Example  
+#### 6.6.1 案例描述
+> 案例描述  
 
-    ![](img/2020-10-18-10-45-17.png)
-        <br>
+
+#### 6.6.2 before
+* 最开始的设计：无论是主体类（FileInputStream、NetworkStream、MemoryStream）还是其扩展类（CrytoFileStream...）都是采用继承的方式实现，代码冗余非常严重，并且这种设计思路会导致“类爆炸”。
+   
+    <br> 
+* 类图
+    ![](img/2020-10-18-10-45-17.png)  
+    <br>   
+
+* 核心逻辑      
+    <br>
+
     ```java
         /**
-         * 定义抽象基类
-         */
+            * 定义抽象基类
+            */
         public abstract class Stream {
             public abstract int read(int number); // 读一些字节，返回下一byte位置，或者-1（如果文件末尾）
             public abstract void seek(int position); // 设置指针到position
@@ -43,10 +53,10 @@
         }
 
         /**
-         * 扩展操作：对主体类 FileStrem 的扩展操作
-         * 包括 CryptoFileStream、BufferedFileStream、CryptoBufferedFileStream
-         * 以CryptoFileStream 继承 FileInputStream、NetworkStream、MemoryStream为例：
-         */
+            * 扩展操作：对主体类 FileStrem 的扩展操作
+            * 包括 CryptoFileStream、BufferedFileStream、CryptoBufferedFileStream
+            * 以CryptoFileStream 继承 FileInputStream、NetworkStream、MemoryStream为例：
+            */
         class CryptoFileStream extends FileStream{
             // 重新方法
         }
@@ -63,41 +73,52 @@
         方法是一样的，但是这种设计方法会产生三个加密类CryptoFileStream、CryptoNetworkStream、CryptoMemoryStream。
         同理Bufferd方法和CryptoBufferd方法都需要分别实现三个类，更夸张的是，如果主体类增多，这些扩展方法的会按照
         阶乘速度增加。
-    ```
-![](img/middle.png)
-* **middle**
-  * 通过组合，而不是继承方式来实现,给CryptoFileStream 传入FileInputStream 的引用，这样就可以不继承FileInputStream便可以使用其方法（同样可以传递 NetworkStream、MemoryStream 的引用到CryptoFileStream 中）  
+    ```  
+* 类 UML 图  
+
+
+![](img/middle.png)  
+
+#### 6.6.3 middle   
+
+* 通过组合，而不是继承方式来实现,给CryptoFileStream 传入FileInputStream 的引用，这样就可以不继承FileInputStream便可以使用其方法（同样可以传递 NetworkStream、MemoryStream 的引用到CryptoFileStream 中）    
+
+    <br>
+
     ```java
-            /**
-            * CryptoFileStream为例：
-            */
+        /**
+        * CryptoFileStream为例：
+        */
 
-            class {
-                FileInputStream stream; // 关键点：
+        class {
+            FileInputStream stream; // 关键点：
 
-                public int read(int number){
-                    stream.read(number);
-                }
-                // 其他方法
+            public int read(int number){
+                stream.read(number);
             }
+            // 其他方法
+        }
 
-            class CryptoFileStream{
-                NetworkStream stream;
-                public int read(int number){
-                    stream.read(number);
-                }
-                // 其他方法
+        class CryptoFileStream{
+            NetworkStream stream;
+            public int read(int number){
+                stream.read(number);
             }
-            class CryptoBufferedFileStream{
-                MemoryStream stream;
-                public int read(int number){
-                    stream.read(number);
-                }
-                // 其他方法
+            // 其他方法
+        }
+        class CryptoBufferedFileStream{
+            MemoryStream stream;
+            public int read(int number){
+                stream.read(number);
             }
+            // 其他方法
+        }
             
     ```
-  * FileInputStream、NetworkStream、MemoryStream都是继承自 Stream。可以发现上面的唯一不同点在于，声明的stream类型不同，但是联想到多态，我们可以把上面代码统一成如下  
+* FileInputStream、NetworkStream、MemoryStream都是继承自 Stream。可以发现上面的唯一不同点在于，声明的stream类型不同，但是联想到多态，我们可以把上面代码统一成如下  
+
+    <br>  
+
     ```java
             class CryptoFileStream{
                 Stream stream; // = new FileInputStream();
@@ -128,41 +149,47 @@
                 // 其他方法
             }
     ```
-![](img/middle_decorator.png)
-  * 现在，上面三个类的操作可以用一个CryptoStream 完成 ，（Bufferd、CrytoBuffered类似处理）
-    > CryptoStream、BufferedStream、CryptoBufferedStream 有个非常特别的共同点：每个类都有一个和父类相同类型(Stream)的变量(Stream)
+
+* 类 UML 图  
+
+
+![](img/middle_decorator.png)  
+
+* 现在，上面三个类的操作可以用一个CryptoStream 完成 ，（Bufferd、CrytoBuffered类似处理）
+  > CryptoStream、BufferedStream、CryptoBufferedStream 有个非常特别的共同点：每个类都有一个和父类相同类型(Stream)的变量(Stream)
 
     ```java
-            class CryptoStream extends Stream{
-                Stream stream; 
-                public CryptoStream(Stream stream){
-                    this.stream = stream;
-                }
-
-                @Override
-                public int read(int number){
-                    //额外的加密操作...
-                    stream.read(number);
-                   // 其他操作
-                } 
-
-                @Override
-                public void seek(int position) {
-                    //额外的加密操作...
-                    stream.seek(position);
-                }
-
-                @Override
-                public void write(char[] data) {
-                    //额外的加密操作...
-                    stream.write(data);
-                }
+        class CryptoStream extends Stream{
+            Stream stream; 
+            public CryptoStream(Stream stream){
+                this.stream = stream;
             }
+
+            @Override
+            public int read(int number){
+                //额外的加密操作...
+                stream.read(number);
+                // 其他操作
+            } 
+
+            @Override
+            public void seek(int position) {
+                //额外的加密操作...
+                stream.seek(position);
+            }
+
+            @Override
+            public void write(char[] data) {
+                //额外的加密操作...
+                stream.write(data);
+            }
+        }
     ```
 <br>
 
-* **after**
-  * 当多个类有相同字段时，应该把该字段往上提（共同继承子另一个类）， CryptoStream、BufferedStream、CryptoBufferedStream 都有Stream stream字段，因此我们对middle进行改进：定义一个抽象类StreamDecorator 作为Decorator 共用变量和方法的统一“接口”。
+#### 6.5.4 after  
+
+* 当多个类有相同字段时，应该把该字段往上提（共同继承子另一个类）， CryptoStream、BufferedStream、CryptoBufferedStream 都有Stream stream字段，因此我们对middle进行改进：定义一个抽象类StreamDecorator 作为Decorator 共用变量和方法的统一“接口”。
 
     ```java
         /**
@@ -179,7 +206,7 @@
         //    public abstract void otherMethod();
         }
     ```
-  * CryptoStream、BufferedStream、CryptoBufferedStream等ConcreteDecorator(具体装饰器)都继承自StreamDecorator（抽象装饰器）
+* CryptoStream、BufferedStream、CryptoBufferedStream等ConcreteDecorator(具体装饰器)都继承自StreamDecorator（抽象装饰器）
     ```java
         class CryptoStream extends StreamDecorator{
             public CryptoStream(Stream stream) {
@@ -204,8 +231,11 @@
                 stream.write(data);
             }
         }
-    ```
-  * 运行时绑定（有没有中java _InputStream_ 嵌套的感觉，没错Java IO 使用的正是 _Decorator_ 模式）
+    ```  
+
+* 运行时绑定（有没有中java _InputStream_ 嵌套的感觉，没错Java IO 使用的正是 _Decorator_ 模式）  
+
+
     ```java
         public class Main {
             /**
@@ -216,10 +246,15 @@
             BufferedStream fs3 = new BufferedStream(fs2);
             CryptoBufferedStream fs4 = new CryptoBufferedStream(fs3);
         }
-    ```
+    ```  
+* 类 UML 图  
+
     ![](img/after.png)
+
 #### 6.6 Java IO Decorator
-![](img/java_io_decorator.png)
+* Java IO 源码中的装饰器模式  
+    
+    ![](img/java_io_decorator.png)
 
 
 #### 6.7 Reference
