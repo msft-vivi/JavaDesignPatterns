@@ -28,7 +28,7 @@
 
 ### 6.5 Example  
 #### 6.6.1 案例描述
-> 案例描述  
+> 设计实现一个读取文件的流（Stream），暂时需要实现FileInputStream、NetworkStream、MemoryStream这三个主体类，分别用于处理文件流、网络流、内存流，该设计还应该具有对这些不同类别的流内容进行加密、缓存、加密同时缓存的功能。
 
 
 #### 6.6.2 before
