@@ -1,6 +1,14 @@
 [TOC]
 
-## Chapter 3 Template Method
+## Chapter 3 Template Method  
+
+> **组件协作模式**  
+> 现代软件专业分工之后的第一个结果是“框架与应用程序的划分”，“组件协作”模式通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用的模式。  
+> • Template Method  
+> • Strategy  
+> • Observer / Event  
+
+
 ### 3.1 Definition
 > **定义一个操作中的算法的骨架 (稳定)，而将一些步骤延迟(变化)到子类中**。**Template Method使得子类可以不改变
 (复用)一个算法的结构即可重定义(override 重写)该算法的某些特定步骤**。
