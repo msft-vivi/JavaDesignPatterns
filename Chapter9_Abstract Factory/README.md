@@ -165,7 +165,7 @@
 
     ![](img/after_class.png)  
 
-* 类 UML 图
+* 类 UML 图  
 
     ![](img/after_uml.png)
 
