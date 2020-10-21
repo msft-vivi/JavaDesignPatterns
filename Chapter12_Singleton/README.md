@@ -1,3 +1,6 @@
+
+[TOC]
+
 ## Chapter 12 Singleton
 > **对象性能模式**  
 > 面向对象很好的解决了“抽象”的问题，但是不可避免地要付出一定的代价。对于通常情况来说，面向对象的成本大都可以忽略不计。但是在某些情况，面向对象所带来的成本必须谨慎处理。
@@ -143,8 +146,9 @@
     }
 ```
 
-#### Reference
+### 10.6 Reference
 
 * [Java sychronized 关键字详解](https://www.cnblogs.com/gnagwang/archive/2011/02/27/1966606.html)
 * [Java sychronized 关键字](https://www.jackforfun.com/java-synchronized)
 * [为什么volatile可以一定程度上保证双检锁ok？](https://blog.csdn.net/Null_RuzZ/article/details/72530826)
+* [菜鸟教程：Java Singleton](https://www.runoob.com/design-pattern/singleton-pattern.html) 
