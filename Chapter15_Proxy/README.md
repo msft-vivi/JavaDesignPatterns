@@ -291,9 +291,11 @@
     }
   ```
 * 类 UML 图  
-  ![](img/2020-10-22-17-37-36.png)
+  <img src="img/2020-10-22-17-37-36.png" width="500" height="350">
+
 ### 15.11 Reference  
 * [Proxy](https://refactoringguru.cn/design-patterns/proxy)  
+* 《Head First Design Patterns》
 
 
 
