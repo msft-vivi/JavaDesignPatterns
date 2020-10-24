@@ -18,8 +18,15 @@
 > 用一个中介对象来封装（封装变化）一系列的对象交互。中介者使各对象不需要显示的相互引用（编译时依赖 ==> 运行时依赖），从而使其耦合松散（管理变化），而且可以独立地改变它们之间的交互。——《设计模式》GoF  
 
 ### 17.3 Structure  
-
+* 《设计模式》GoF
 <img src="img/structure.png" height="300" width="500">  
+  <br>   
+
+* From Refercence  
+<img src="img/structure2.png" height="400" width="660">  
+
+* 希望从左图结构转换为右图结构  
+<img src="img/2020-10-24-10-02-35.png" height="300" width="500">  
 
 ### 17.4 Course points  
 * 将多个对象间复杂的关联关系解耦，Mediator 模式将多个对象间的控制逻辑进行集中管理，变 “**多个对象互相关联**” 为 “多个对象和一个中介者关联”，简化了系统的维护，抵御了可能的变化。  
@@ -71,7 +78,7 @@
   <br>  
   * **责任链模式**按照顺序将请求动态传递给一系列的潜在接收者， 直至其中一名接收者对请求进行处理。  
     <br>  
-  * **命令模式**在发送者和请求者之间建立单向连接。
+  * **命令模式**在发送者和请求者之间建立单向连接。  
     <br>  
   * **中介者模式**清除了发送者和请求者之间的直接连接， 强制它们通过一个中介对象进行间接沟通。  
     <br>  
@@ -84,11 +91,121 @@
     <br>  
 * **中介者模式**和**观察者模式**之间的区别往往很难记住。在大部分情况下，你可以使用其中一种模式，而有时可以同时使用。让我们来看看如何做到这一点。  
     <br>  
-  * 中介者的主要目标是**消除一系列系统组件之间的相互依赖**。这些组件将依赖于同一个中介者对象。** 观察者的目标是在对象之间建立动态的单向连接**，使得部分对象可作为其他对象的附属发挥作用。  
+  * 中介者的主要目标是**消除一系列系统组件之间的相互依赖**。这些组件将依赖于同一个中介者对象。**观察者的目标是在对象之间建立动态的单向连接**，使得部分对象可作为其他对象的附属发挥作用。  
     <br>  
   * 有一种流行的中介者模式实现方式依赖于观察者。中介者对象担当发布者的角色，其他组件则作为订阅者，可以订阅中介者的事件或取消订阅。当中介者以这种方式实现时，它可能看上去与观察者非常相似。  
 
 ### 17.9 Example 
+> 假如你有一个创建和修改客户资料的对话框，它由各种控件组成，例如文本框（Text­Field）、复选框 （Checkbox）和按钮 （Button）等。  
+#### 17.9.1  before  
+* 如果直接在表单元素代码中实现业务逻辑，你将很难在程序其他表单中复用这些元素类。例如，由于复选框类与狗狗的文本框相耦合，所以将无法在其他表单中使用它。你要么使用渲染资料表单时用到的所有类，要么一个都不用。  
+  <img src="img/2020-10-24-10-15-47.png" width="500" height="300">  
 
+#### 17.9.2 after  
+* 中介者模式建议你停止组件之间的直接交流并使其相互独立。这些**组件必须调用特殊的中介者对象**，**通过中介者对象重定向调用行为**，以间接的方式进行合作。最终，**组件仅依赖于一个中介者类**，无需与多个其他组件相耦合。  
+  <br>  
+* 对话框 （Dialog） 类作为中介者  
+  <img src="img/2020-10-24-10-18-36.png" width="500" height="300">  
+  <br>  
+* 之前，当用户点击按钮后，它必须对所有表单元素数值进行校验。而现在它的唯一工作是**将点击事件通知给对话框**。收到通知后，**对话框可以自行校验数值或将任务委派给各元素**。这样一来，按钮不再与多个表单元素相关联，而仅依赖于对话框类。  
+  <br>  
+* 在本例中，中介者模式可帮助你减少各种 UI 类（按钮、复选框和文本标签）之间的相互依赖关系。  
+ <img src="img/2020-10-24-10-23-40.png" width="500" height="500">
+
+* 定义中介者接口  
+  <br>  
+  ```java
+    public interface Mediator {
+        // 这个方法实际上是通过组件中的Mediator 调用的
+        void notify(Component sender, String event);
+    }
+  ```    
+* 具体的中介者  
+  <br>  
+  ```java
+    /**
+      * 具体中介者类可解开各组件之间相互交叉的连接关系并将其转移到中介者中。
+      */
+      public class AuthenticationDialog implements Mediator{
+          private Checkbox loginOrRegisterChkBx;
+          private Textbox loginUsername, loginPassword;
+          private Button okBtn, cancelBtn;
+
+          // 添加当前组件到中介者
+          public void registerComponent(Component component){
+              component.setMediator(this);
+          }
+
+          // 当组件中有事件发生时，它会通知中介者。中介者接收到通知后可自行处理，
+          // 也可将请求传递给另一个组件。
+          @Override
+          public void notify(Component sender, String event) {
+              if (sender == loginOrRegisterChkBx && event == "check"){
+                  // ...
+              }
+
+              if(sender == loginUsername && event == "submit"){
+                // ...
+              }
+
+              if(sender == okBtn && event == "click"){
+                  // ...
+              }
+          }
+      }
+  ```
+* 定义具体组件的统一接口  
+  <br>  
+  ```java  
+    /**
+      * 定义组件的接口
+      */
+      public interface Component {
+          void setMediator(Mediator mediator);
+          String getName();
+      }
+  ```  
+* 实现具体的组件（以Button为例，其他组件类似）  
+  <br>  
+  ```java  
+    public class Button implements Component{
+        private Mediator mediator;
+
+        @Override
+        public void setMediator(Mediator mediator) {
+            this.mediator = mediator;
+        }
+
+        @Override
+        public String getName() {
+            return "Button";
+        }
+
+        // 通知中介者
+        public void click(){
+            mediator.notify(this,"click");
+        }
+    }
+  ```  
+* Client  
+  <br>  
+  ```java  
+    public class Client {
+      public static void main(String[] args) {
+          AuthenticationDialog mediator = new AuthenticationDialog();
+
+          // 定义组件，并注册（和 Observer 类似）
+          Button btn = new Button();
+          mediator.registerComponent(btn);
+
+          Textbox textbox = new Textbox();
+          mediator.registerComponent(textbox);
+
+          Checkbox checkbox = new Checkbox();
+          mediator.registerComponent(checkbox);
+      }
+  }
+  ```
 ### 17.10 Reference  
-* [Mediator](https://refactoringguru.cn/design-patterns/mediator)
+* [Mediator](https://refactoringguru.cn/design-patterns/mediator)  
+
