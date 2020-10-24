@@ -159,6 +159,8 @@
   ```java  
     /**
       * 定义组件的接口
+      * 组件会使用中介者接口与中介者进行交互。因此只需将它们与不同的中介者连接
+      * 起来，你就能在其他情境中使用这些组件了。
       */
       public interface Component {
           void setMediator(Mediator mediator);
