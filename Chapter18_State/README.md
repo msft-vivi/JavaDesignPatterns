@@ -230,7 +230,8 @@
             ui.init();
         }
     }
-  ```
+  ```  
+  ![](img/2020-10-24-17-20-26.png)
 * 在本例中，状态模式将根据当前回放状态，让媒体播放器中的相同控件完成不同的行为。  
 <img src="img/UML.png" width="500" height="300">  
   <br>  
@@ -240,3 +241,4 @@
 ### 18.10 Reference 
 * [Class.forName()与xxx.class的区别](https://blog.csdn.net/Terminator2015/article/details/52123388)
 * [Java 匿名内部类调用局部变量](https://blog.csdn.net/HeatDeath/article/details/79963628)
+* [State](https://refactoringguru.cn/design-patterns/state)
