@@ -61,7 +61,7 @@
 * 如果客户端过于频繁地创建备忘录，程序将消耗大量内存。  
   <br>  
 *  负责人必须完整跟踪原发器的生命周期，这样才能销毁弃用的备忘录。  
-  <br>  
+  <br>   
 * 绝大部分动态编程语言（例如 PHP、 Python 和 JavaScript）不能确保备忘录中的状态不被修改。  
 
 ### 19.8 Relationship with other Patterns  
