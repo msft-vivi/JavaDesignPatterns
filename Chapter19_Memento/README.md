@@ -185,7 +185,9 @@
   ```  
 
 #### 19.9.4 example2
-* 这是一个比较完整的例子，采用可视化的方式展现了Memento模式在（编辑器，画布等应用）撤销操作上的用途   
+* 这是一个比较完整的例子，采用可视化的方式展现了Memento模式在（编辑器，画布等应用）撤销操作上的用途    
+  <br>   
+* 详情参考源码 example2/after
 
 ### 19.10 Reference  
 * [Memento](https://refactoringguru.cn/design-patterns/memento)
