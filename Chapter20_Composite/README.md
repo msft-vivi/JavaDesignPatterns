@@ -125,6 +125,10 @@
 * 把对对象和对象容器的复杂操作封装在对象和对象容器内部（使用容器实现），对外提供一致的接口  
   <br>  
   ```java
+    // 1.如果为了对象和容器的一致性，可以把Composite内的add、remove 都放到Component 接口中  
+    // 这样有个弊端是，Leaf 中并不需要这些方法(add等)，破坏了接口隔离原则 
+    
+    // 2.这里采用的是符合接口隔离原则的做法，把共有的方法放到统一接口，而其他方法具体到实现类实现
     public interface Component {
         void execute();
     }
@@ -202,6 +206,6 @@
       public void invoke(Component component){
           component.execute();
       }
-  ```
+  ``` 
 ### 20.10 Reference  
 * [Composite](https://refactoringguru.cn/design-patterns/composite)
