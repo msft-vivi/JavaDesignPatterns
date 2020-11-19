@@ -6,6 +6,7 @@
 
 ## 如何解决复杂性？
 + 分解
+  
   + 人们面对复杂性有一个常见的做法：即分而治之，将大问题分解为多个小问题，将复杂问题分解为多个简单问题。
 + 抽象
   + 更高层次来讲，人们处理复杂性有一个通用的技术，即抽象。由于不能掌握全部的复杂对象，我们选择忽视它的非本质细节，而去处理泛化和理想化了的对象模型。
@@ -38,54 +39,56 @@
   + 客户程序无需获知对象的具体类型，只需要知道对象所具有的接口。
   + 减少系统中各部分的依赖关系，从而实现“高内聚、松耦合”的类型设计方案。
 
+### 设计模式介绍
+* [Introduction to Design Patterns](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter01_Introduction2DesignPatterns)
+* [Principles](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter02_ObjectOrientedDesignPrinciples)
 ## 从封装变化角度对模式分类
 ### 组件协作：
-+ [Template Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter3_TemplateMethod)  
-+ [Strategy](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter4_Strategy)
-+ [Observer/Event](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter5_Observer)  
++ [Template Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter03_TemplateMethod)  
++ [Strategy](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter04_Strategy)
++ [Observer/Event](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter05_Observer)  
 
 
 ### 单一职责：
-+ [Decorator](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter6_Decorator)
-+ [Bridge](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter7_Bridge)
++ [Decorator](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter06_Decorator)
++ [Bridge](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter07_Bridge)
 
 ### 对象创建:
-+ [Factory Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter8_Factory%20Method)
-+ [Abstract Factory](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chapter9_Abstract%20Factory)
-+ [Prototype](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Prototype)
-+ [Builder](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Builder)
++ [Factory Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter08_Factory%20Method)
++ [Abstract Factory](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter09_Abstract%20Factory)
++ [Prototype](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter10_Prototype)
++ [Builder](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter11_Builder)
 
 
 ### 对象性能：
-+ [Singleton](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Singleton)
-+ [Flyweight(享元模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Flyweight)  
++ [Singleton](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter12_Singleton)
++ [Flyweight(享元模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter13_Flyweight)  
 
 ### 接口隔离:
-+ [Façade(门面模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Facade)
-+ [Proxy](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Proxy)
-+ [Mediator(中介者)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Mediator)
-+ [Adapter](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Adapter)
++ [Façade(门面模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter14_Facade)
++ [Proxy](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter15_Proxy)
++ [Mediator(中介者)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter17_Mediator)
++ [Adapter](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter16_Adapter)
 
- 
+
 ### 状态变化：
-+ [Memento(备忘录)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Memento)
-+ [State]([State](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/))
++ [Memento(备忘录)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter19_Memento)
++ [State](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter18_State)
 
 
 ### 数据结构：
-+ [Composite(组合模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Composite)
-+ [Iterator](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Iterator)
-+ [Chain of Resposibility(职责链)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Chain%20of%20Resposibility)
++ [Composite(组合模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter20_Composite)
++ Iterator
++ Chain of Resposibility(职责链)
 
 
 ### 行为变化：
-+ [Command](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Command)
-+ [Command(Head-First版)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Command-Pattern)
-+ [Visitor](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Visitor)
++ Command
++ Visitor
 
 
 ### 领域问题：
-+ [Interpreter](https://github.com/Tianweidadada/JavaDesignPatterns/tree/master/Interpreter)
++ Interpreter
 
 
 ## 总结
