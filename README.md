@@ -90,6 +90,38 @@
 ### 领域问题：
 + Interpreter
 
+## GOF 设计模式分类
+### 创建型模式
+* [Factory Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter08_Factory%20Method)
+* [Abstract Factory](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter09_Abstract%20Factory)
+* [Prototype](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter10_Prototype)
+* [Builder](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter11_Builder)
+* [Singleton](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter12_Singleton)
+
+### 结构型模式
+
+* [Adapter](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter16_Adapter)
+* [Bridge](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter07_Bridge)
+* [Composite(组合模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter20_Composite)
+* [Decorator](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter06_Decorator)
+* [Façade(门面模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter14_Facade)
+* [Flyweight(享元模式)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter13_Flyweight)  
+* [Proxy](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter15_Proxy)
+* Filter(过滤器模式)
+
+### 行为模式
+
+* [Mediator(中介者)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter17_Mediator)
+* [Memento(备忘录)](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter19_Memento)
+* [Observer/Event](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter05_Observer)  
+* [State](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter18_State)
+* [Strategy](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter04_Strategy)
+* [Template Method](https://github.com/Tianweidadada/JavaDesignPatterns/tree/main/Chapter03_TemplateMethod)  
+* Chain of Resposibility(职责链)
+* Command
+* Iterator
+* Visitor
+
 
 ## 总结
 ### 现代较少用的模式
